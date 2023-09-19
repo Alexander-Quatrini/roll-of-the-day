@@ -6,7 +6,8 @@ class RollContainer extends React.Component{
     render(props){
         return(
             <div className='roll-container'>
-                <p>{this.props.value}</p>
+                <h1>Today's Roll of the Day Is...</h1>
+                <h2>{this.props.value}</h2>
             </div>
         );
         

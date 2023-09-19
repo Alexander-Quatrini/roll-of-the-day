@@ -1,4 +1,5 @@
 import React from 'react';
+import './RollStats.css';
 
 class RollStats extends React.Component{
 
@@ -7,10 +8,16 @@ class RollStats extends React.Component{
         return(
         <div className='roll-stats'>
             <h1>Stats</h1>
-            <ul>{this.props.list.slice(-5).map(item => {
-                    return <li key={item.date}>{item.value}</li>
+            
+            <div className='last-five'>
+
+                <h2>Last 5 Rolls</h2>
+                <ul>{this.props.list.slice(-5).map(item => {
+                    return <li className='last-five-results' key={item.date}><h>{item.date}</h> <br /> <p> {item.value} </p></li>
                 })}
-            </ul>
+                </ul>
+                
+            </div>
         </div>
         ); 
     }
