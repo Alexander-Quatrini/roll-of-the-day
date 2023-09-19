@@ -1,5 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
+import './components/RollContainer/RollContainer.js'
+import RollContainer from './components/RollContainer/RollContainer.js';
+import RollStats from './components/RollStats/RollStats';
+import RollList from './components/roll-list';
 
 function App() {
   return (
@@ -18,6 +22,8 @@ function App() {
           Learn React
         </a>
       </header>
+      <RollContainer value={20}></RollContainer>
+      <RollStats list={RollList}></RollStats>
     </div>
   );
 }
