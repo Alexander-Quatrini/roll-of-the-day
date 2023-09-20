@@ -13,7 +13,7 @@ class RollStats extends React.Component{
 
                 <h2>Last 5 Rolls</h2>
                 <ul>{this.props.list.slice(-5).map(item => {
-                    return <li className='last-five-results' key={item.date}><h>{item.date}</h> <br /> <p> {item.value} </p></li>
+                    return <li className='last-five-results' key={item.date}><h5>{item.date}</h5> <br /> <p> {item.value} </p></li>
                 })}
                 </ul>
                 
