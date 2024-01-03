@@ -1,7 +1,6 @@
 ul{
     list-style-type: none;
     padding: 0;
-    font-size: 2.5rem;
 }
 
 ul li.last-five-results{
@@ -22,7 +21,17 @@ div.last-five{
 }
 
 ul li.last-five-results p{
-    width: 4rem;
+    font-size: 1.25rem;
+}
+
+ul li.last-five-results p.values{
+    padding-top: 1rem;
+    font-size: 2.5rem;
+    width: 5rem;
+    height: 5rem;
     margin: 10px 10px;
-    border: 5px dashed black;
+    background-image: url('./roll-icon.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
