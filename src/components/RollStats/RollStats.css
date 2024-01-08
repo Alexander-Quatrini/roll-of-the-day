@@ -1,19 +1,38 @@
 ul{
     list-style-type: none;
     padding: 0;
-}
-
-ul li.last-five-results{
-    margin: 0px 10px;
-    display: inline-block;
-    
-}
-
-.last-five h2{
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
     margin-bottom: 0px;
 }
 
-div.last-five{
+ul li.last-five-results{
+    margin: 0px 20px;
+    display: inline-block;
+}
+
+.roll-history-container h2{
+    margin-bottom: 0px;
+}
+
+div.roll-history{
+    display: inline-flex;
+    align-items: center;
+}
+
+div.roll-history span.nav{
+    font-size: xx-large;
+    color: #111;
+}
+
+div.roll-history span.nav:hover{
+    color: #000;
+    cursor: pointer;
+}
+
+div.roll-history-container{
+    display: inline-block;
     width: 50%;
     margin: auto;
     border-bottom: 2px solid black;
@@ -22,14 +41,15 @@ div.last-five{
 
 ul li.last-five-results p{
     font-size: 1.25rem;
+    margin: 0px auto;
 }
 
 ul li.last-five-results p.values{
-    padding-top: 1rem;
-    font-size: 2.5rem;
+    padding-top: 2.75rem;
+    font-size: 1.5rem;
     width: 5rem;
     height: 5rem;
-    margin: 10px 10px;
+    margin: 0px;
     background-image: url('./roll-icon.png');
     background-position: center;
     background-size: contain;
