@@ -23,11 +23,19 @@ div.roll-history{
 
 div.roll-history span.nav{
     font-size: xx-large;
-    color: #131313;
 }
 
-div.roll-history span.nav:hover{
-    color: #000;
+div.roll-history span.nav.inactive{
+    color: #555;
+    cursor: default;
+}
+
+div.roll-history span.nav.active{
+    color: #999;
+}
+
+div.roll-history span.nav.active:hover{
+    color: #ddd;
     cursor: pointer;
 }
 
