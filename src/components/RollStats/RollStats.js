@@ -1,6 +1,8 @@
 import React from 'react';
 import './RollStats.css';
 import RollList from '../roll-list';
+import GeneralStats from '../GeneralStats/general-stats';
+import RollDisplay from '../RollDisplay/RollDisplay';
 
 class RollStats extends React.Component{
 
@@ -13,7 +15,7 @@ class RollStats extends React.Component{
         return(
         <div className='roll-stats'>
             <h1>Stats</h1>
-            
+            <GeneralStats rollEntryDate='12/28/23'></GeneralStats>
             <div className='roll-history-container'>
 
                 <h2>Roll History</h2>
@@ -21,7 +23,7 @@ class RollStats extends React.Component{
                     <span className={this.state.historyPosition != 0 ? 'nav active' : 'nav inactive'} onClick={() => this.updateHistoryPosition(true)}>&#10094;</span>
                     
                     <ul>{RollList.slice(this.state.historyPosition, this.state.historyPosition+5).map(item => {
-                        return <li className='last-five-results' key={item.date}><p className='values'> {item.value} </p> <br /> <p>{item.date}</p> </li>
+                        return <li className='last-five-results' key={item.date}><RollDisplay value={item.value}></RollDisplay><br /> <p className='date'>{item.date}</p> </li>
                     })}
                     </ul>
                     

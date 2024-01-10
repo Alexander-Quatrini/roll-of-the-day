@@ -47,19 +47,7 @@ div.roll-history-container{
     border-top: 2px solid black;
 }
 
-ul li.last-five-results p{
+ul li.last-five-results p.date{
     font-size: 1.25rem;
     margin: 0px auto;
-}
-
-ul li.last-five-results p.values{
-    padding-top: 2.75rem;
-    font-size: 1.5rem;
-    width: 5rem;
-    height: 5rem;
-    margin: 0px;
-    background-image: url('./roll-icon.png');
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
 }

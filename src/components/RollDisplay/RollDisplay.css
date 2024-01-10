@@ -1,0 +1,11 @@
+p.value{
+    padding-top: 2.75rem;
+    font-size: 1.5rem;
+    width: 5rem;
+    height: 5rem;
+    margin: 0px;
+    background-image: url('./roll-icon.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
