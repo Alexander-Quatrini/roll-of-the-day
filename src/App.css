@@ -6,3 +6,22 @@ body{
   text-align: center;
   color: white;
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 10px;
+  padding: 10px 0px;
+}
+
+::-webkit-scrollbar-track {
+  background: #121212;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #eee;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #cdcdcd;
+}

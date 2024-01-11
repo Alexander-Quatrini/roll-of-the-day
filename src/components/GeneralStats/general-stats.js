@@ -1,6 +1,7 @@
 import React from 'react'
 import './general-stats.css'
 import RollList from '../roll-list';
+import RollDisplay from '../RollDisplay/RollDisplay';
 
 class GeneralStats extends React.Component{
     
@@ -30,13 +31,14 @@ class GeneralStats extends React.Component{
             return(
                 <div className='general-error-container'>
                     <h3>Something went wrong...</h3>
-                    <p>Looks like we can't find this entry! '{this.rollEntry}'</p>
+                    <p>Looks like we can't find this entry! '{this.entry.date}'</p>
                 </div>
             );
         }
         else return(
             <div className='general-stat-container'>
-                <h3>Stats for the roll of {this.rollEntry}</h3>
+                <h3>{this.entry.date}</h3>
+                <RollDisplay value= {this.entry.value}></RollDisplay>
                 
             </div>
         );

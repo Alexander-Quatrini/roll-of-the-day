@@ -1,15 +1,16 @@
 import './App.css';
 import './components/RollContainer/RollContainer.js'
-import RollContainer from './components/RollContainer/RollContainer.js';
 import RollStats from './components/RollStats/RollStats';
 import RollList from './components/roll-list';
 import RollHeader from './components/Header/Header';
+import RollDisplay from './components/RollDisplay/RollDisplay.js';
 
 function App() {
   return (
     <div className="App">
       <RollHeader></RollHeader>
-      <RollContainer value={20}></RollContainer>
+      <h1>Today's roll of the day is...</h1>
+      <RollDisplay value={20} large></RollDisplay>
       <RollStats list={RollList}></RollStats>
     </div>
   );

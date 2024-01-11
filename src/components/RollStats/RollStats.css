@@ -1,15 +1,16 @@
 ul{
+    max-width: 60%;
     list-style-type: none;
     padding: 0;
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 0px;
+    overflow-x: scroll;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
 }
 
 ul li.last-five-results{
-    margin: 0px 20px;
+    margin: 20px 20px;
     display: inline-block;
+    scroll-snap-align: none start;
 }
 
 .roll-history-container h2{
@@ -19,6 +20,7 @@ ul li.last-five-results{
 div.roll-history{
     display: inline-flex;
     align-items: center;
+    justify-content: center;
 }
 
 div.roll-history span.nav{
@@ -41,10 +43,10 @@ div.roll-history span.nav.active:hover{
 
 div.roll-history-container{
     display: inline-block;
-    width: 50%;
     margin: auto;
     border-bottom: 2px solid black;
     border-top: 2px solid black;
+    margin-bottom: 10%
 }
 
 ul li.last-five-results p.date{

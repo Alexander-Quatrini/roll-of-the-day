@@ -20,14 +20,10 @@ class RollStats extends React.Component{
 
                 <h2>Roll History</h2>
                 <div className='roll-history'>
-                    <span className={this.state.historyPosition != 0 ? 'nav active' : 'nav inactive'} onClick={() => this.updateHistoryPosition(true)}>&#10094;</span>
-                    
-                    <ul>{RollList.slice(this.state.historyPosition, this.state.historyPosition+5).map(item => {
+                    <ul>{RollList.map(item => {
                         return <li className='last-five-results' key={item.date}><RollDisplay value={item.value}></RollDisplay><br /> <p className='date'>{item.date}</p> </li>
                     })}
                     </ul>
-                    
-                    <span className={this.state.historyPosition != RollList.length-5 ? 'nav active' : 'nav inactive'} onClick={() => this.updateHistoryPosition(false)}>&#10095;</span>
                 </div>
                 
             </div>

@@ -9,7 +9,7 @@ class RollDisplay extends React.Component{
 
     render(){
         return(
-            <div className="roll-display-container"><p className="value">{this.value}</p></div>
+            <div className={this.props.large ? 'roll-display-container-large' : 'roll-display-container'}><p className="value">{this.value}</p></div>
         );
     }
 

@@ -1,4 +1,4 @@
-p.value{
+.roll-display-container p.value{
     padding-top: 2.75rem;
     font-size: 1.5rem;
     width: 5rem;
@@ -8,4 +8,26 @@ p.value{
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+.roll-display-container-large p.value{
+    padding-top: 3.75rem;
+    font-size: 2.25rem;
+    width: 7.5rem;
+    height: 7.5rem;
+    margin: 0px;
+    background-image: url('./roll-icon.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.roll-display-container{
+    margin: auto;
+    width: fit-content;
+}
+
+.roll-display-container-large{
+    margin: auto;
+    width: fit-content;
 }
