@@ -29,6 +29,27 @@
     }
 }
 
+.date-picker{
+    margin-bottom: 10px;
+}
+
+.date-picker input[type='date']{
+    color-scheme: dark;
+}
+
+.date-picker p{
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.date-picker-body p{
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+}
+
 .calendar-table-header{
     display: flex;
     width: 100%;

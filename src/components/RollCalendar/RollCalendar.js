@@ -5,8 +5,9 @@ class RollCalendar extends React.Component{
         super(props);
         this.state = { date: new Date(Date.now())};
         this.weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-        this.months = ['January', 'February', "March", "April", "May", "June", 'July', 'August']
+        this.months = ['January', 'February', "March", "April", "May", "June", 'July', 'August', 'September', 'October', 'November', 'December']
         this.generateCalendarRows();
+        this.updateSelectedDateEvent = this.updateSelectedDateEvent.bind(this);
     }
 
     generateCalendarRows(){
@@ -26,6 +27,7 @@ class RollCalendar extends React.Component{
               let calendarDay = {
                 date: (new Date(first)),
                 month: first.getMonth(),
+                current: first.getMonth() === this.state.date.getMonth(),
                 number: first.getDate(),
                 year: first.getFullYear()
               }
@@ -36,17 +38,23 @@ class RollCalendar extends React.Component{
 
     render(){
         return(
-            <div className='calendar'> <p>{this.months[this.state.date.getMonth()]} {this.state.date.getDate()}, {this.state.date.getFullYear()}</p>
+            <div className='calendar'> 
+                
+                <div className='date-picker'> 
+                    <input type='date' id='start' defaultValue=
+                    {this.state.date.getFullYear() + "-" + (this.state.date.getMonth()+1).toString().padStart(2, '0')
+                    + "-" + this.state.date.getDate().toString().padStart(2, '0')}
+                    onChange={this.updateSelectedDateEvent}/>
+                </div>
+
                 <div className='calendar-table-header'>
-                    {this.weekDays.map(weekday => {return (<p key={weekday}>{weekday}</p>);}
-                    )}
-                    
+                    {this.weekDays.map(weekday => {return (<p key={weekday}>{weekday}</p>);})}
                 </div>
                 <div className='calendar-table-body'>
                     {this.monthDays.map(day => {
                         return(
                                 <div onClick={() => this.updateSelectedDate(day)} 
-                                className={"calendar-day" + (day.date.getMonth() === this.state.date.getMonth() ? " current" : "") 
+                                className={"calendar-day" + (day.current ? " current" : "") 
                                 + (day.date.toDateString() === this.state.date.toDateString() ? " selected": "")} 
                                 key={'' + day.month + day.number}><p >{day.number}</p></div>
                             );
@@ -58,6 +66,11 @@ class RollCalendar extends React.Component{
 
     updateSelectedDate(day){
         this.setState({date: day.date});
+    }
+
+    updateSelectedDateEvent(event){
+        let dateSplit = event.target.value.split('-');
+        this.setState({date: new Date(Number(dateSplit[0]), Number(dateSplit[1]-1), Number(dateSplit[2]))});
     }
 }
 
