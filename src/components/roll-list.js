@@ -15,6 +15,8 @@ var RollList = [
     'date': '12/31/23'},
     {'value': '1',
     'date': '01/01/24'},
+    {'value': '20',
+    'date': '04/15/2024'}
 ]
 
 export default RollList;

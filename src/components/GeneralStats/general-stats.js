@@ -16,10 +16,15 @@ function GeneralStats(props){
         );
     }
     else return(
-        <div className='general-stat-container'>
-            <h3>{entryStats.entry.date}</h3>
-            <RollDisplay value= {entryStats.entry.value}></RollDisplay>
-            
+        <div className='container'>
+
+            <div className='general-stat-container'>
+                <h3>{entryStats.entry.date}</h3>
+                <RollDisplay value= {entryStats.entry.value}></RollDisplay>
+            </div>
+
+            <p>The value {entryStats.entry.value} has been rolled before this date {entryStats.numBefore} time(s)!</p>
+            <p>The value {entryStats.entry.value} has been rolled {entryStats.numTotal} time(s) total!</p>
         </div>
     );
 }
@@ -29,10 +34,17 @@ function calculateStats(rollDate){
     if(index == -1){
         return undefined
     }else{
+        let entry = RollList[index]
+        let before = RollList.slice(0, index)
+        let after = RollList.slice(index)
+
+        let numBefore = before.filter(compare => { return compare.value == entry.value}).length
+        let numAfter = after.filter(compare => { return compare.value == entry.value}).length
         return({
-            entry: RollList[index],
-            before: RollList.slice(0, index),
-            after: RollList.slice(index),
+            entry,
+            numBefore,
+            numAfter,
+            numTotal: numBefore + numAfter,
         })
     }
 }

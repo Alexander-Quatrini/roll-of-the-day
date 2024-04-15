@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react'
+import GeneralStats from '../GeneralStats/general-stats.js'
 import './RollCalendar.css'
 
 function RollCalendar(props){
@@ -11,23 +12,32 @@ function RollCalendar(props){
     let monthDays = generateCalendarRows(date);
 
     return(
-            <div className='calendar'> 
+      <div className='container'>
+        
+        <GeneralStats rollEntryDate={date.toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: '2-digit',
+              day: '2-digit'
+        })}></GeneralStats>
+
+        <div className='calendar'> 
                 
-                <div className='calendar-table-header'>
-                    {weekDays.map(weekday => {return (<p key={weekday}>{weekday}</p>);})}
-                </div>
-                <div className='calendar-table-body'>
-                    {monthDays.map(day => {
-                        return(
-                                <div onClick={() => setDate(day.date)} 
-                                className={"calendar-day" + (day.current ? " current" : "") 
-                                + (day.date.toDateString() === date.toDateString() ? " selected": "")} 
-                                key={'' + day.month + day.number}><p >{day.number}</p></div>
-                            );
-                    })} 
-                </div>
-            </div>
-            );
+          <div className='calendar-table-header'>
+              {weekDays.map(weekday => {return (<p key={weekday}>{weekday}</p>);})}
+          </div>
+          <div className='calendar-table-body'>
+            {monthDays.map(day => {
+            return(
+                <div onClick={() => setDate(day.date)} 
+                className={"calendar-day" + (day.current ? " current" : "") 
+                + (day.date.toDateString() === date.toDateString() ? " selected": "")} 
+                key={'' + day.month + day.number}><p >{day.number}</p></div>
+                );
+            })} 
+          </div>
+        </div>
+      </div>
+    );
 }
 
 function generateCalendarRows(date){

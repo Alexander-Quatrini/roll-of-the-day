@@ -12,7 +12,6 @@ function App() {
       <RollHeader></RollHeader>
       <h1>Today's roll of the day is...</h1>
       <RollDisplay value={20} large></RollDisplay>
-      <RollStats list={RollList}></RollStats>
       <RollCalendar></RollCalendar>
     </div>
   );
